@@ -1,4 +1,4 @@
-# TCP Echo Client + Server (key manager + broker server) in C
+# TCP Echo Client + Servers in C
 
 
 This project was designed to support multi-threading of clients to gain extra credit as an undergrad.
