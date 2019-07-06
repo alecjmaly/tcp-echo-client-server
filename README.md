@@ -1,3 +1,5 @@
+# TCP Echo Client + Server (key manager + broker server) in C
+
 
 This project was designed to support multi-threading of clients to gain extra credit as an undergrad.
 
@@ -14,8 +16,7 @@ Notes:
 
 
 
-
-Programs can be compiled using the provided bash script (build.sh) by running:  bash build.sh
+## Programs can be compiled using the provided bash script (build.sh) by running:  bash build.sh
   $(gcc TCPEchoClient.c DieWithError.c -o client -std=c99 -lm)
   $(gcc TCPEchoServer.c HandleTCPClient.c DieWithError.c -o server -std=gnu99 -lm -lpthread)
   $(gcc KeyManager.c DieWithError.c -o keymanager) 
@@ -23,19 +24,19 @@ Programs can be compiled using the provided bash script (build.sh) by running:  
 
 
 
+## Details
 
-
-Key Manager:
+### Key Manager:
   parameters: ./keymanager <UDP SERVER PORT>
   run example :  ./keymanager 1500
 
 
-Broker:
+### Broker:
   parameters ./server <THIS BROKER's UDP PORT> <THIS BROKER's TCP PORT> <Broker ID> <p> <q> <Key Manager IP> <Key Manager Port>
   run example: ./server 1501 1501 5 59 107 127.0.0.1 1500
 
 
-Client:
+### Client:
   parameters: ./client <Server/Broker IP> <Broker TCP Port> <Broker ID> <Client ID> <p> <q> [<KeyManager Port>]
   run example: ./client 127.0.0.1 1501 5 18 113 31 1500
 
